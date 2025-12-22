@@ -1,0 +1,458 @@
+:root {
+  --primary-green: #2e7d32;
+  --light-green: #4caf50;
+  --lime-green: #bcf17f;
+  --yellow: #ffeb3b;
+  --orange: #ff9800;
+  --red: #f44336;
+  --dark: #1a1a1a;
+  --light: #f9f9f9;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+
+  --star-glow: 0 0 8px rgba(255, 255, 255, 0.8);
+  --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  background-color: var(--light-green);
+  color: var(--dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* النجوم المضيئة المتحركة */
+.stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.star {
+  position: absolute;
+  background-color: rgb(205, 250, 205);
+  border-radius: 50%;
+  box-shadow: var(--star-glow);
+  opacity: 0;
+}
+
+.star-small {
+  width: 3px;
+  height: 3px;
+}
+.star-medium {
+  width: 5px;
+  height: 5px;
+}
+.star-large {
+  width: 8px;
+  height: 8px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(46, 125, 50, 0.95);
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  padding: 0.7rem 5%;
+  background-color: rgba(46, 125, 50, 0.98);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--lime-green), var(--primary-green));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  top: 5px;
+  left: 10px;
+  opacity: 0.3;
+}
+
+.logo:after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #654321;
+  border-radius: 50%;
+  bottom: 5px;
+  right: 10px;
+}
+
+.company-name {
+  font-family: "Almarai", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 3px 0;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background: linear-gradient(
+    to bottom right,
+    var(--primary-green),
+    var(--lime-green)
+  ); */
+  position: relative;
+  overflow: hidden;
+  padding: 0 5%;
+}
+
+/* المنظقة الفتحة في الخلفية */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 85%;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(circle, #bcf17f, transparent, transparent);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.hero-content {
+  width: 60%;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-title {
+  font-family: "Almarai", sans-serif;
+  font-size: 4.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-title span {
+  display: inline-block;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--yellow);
+  color: var(--dark);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: var(--transition);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+  background-color: var(--orange);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.img-container img {
+  width: 350px;
+  height: auto;
+}
+
+#leaf {
+  position: absolute;
+  top: 20%;
+  left: 37%;
+  width: 12%;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  z-index: 10;
+  transform: rotate(45deg);
+}
+#lemon {
+  position: absolute;
+  top: 20%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  width: 13%;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+#orange {
+  position: absolute;
+  top: 80%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  width: 10%;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+#blackberry3 {
+  position: absolute;
+  top: 27%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  width: 8%;
+}
+
+#coconoutleaf {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  width: 20%;
+}
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 5%;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    flex-direction: column;
+    background-color: var(--primary-green);
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    text-align: center;
+    padding: 2rem 0;
+    gap: 1.5rem;
+    transition: var(--transition);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  #leaf {
+    position: absolute;
+    top: 30%;
+    left: 37%;
+    width: 12%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    z-index: 10;
+    transform: rotate(45deg);
+  }
+  .img-container img {
+    width: 250px;
+    height: auto;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 60%;
+    left: 85%;
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(circle, #bcf17f, transparent, transparent);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  #lemon {
+    position: absolute;
+    top: 15%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    width: 13%;
+  }
+  #orange {
+    position: absolute;
+    top: 90%;
+    left: 2%;
+    transform: translate(-50%, -50%);
+    width: 10%;
+  }
+}
+
+@media (max-width: 515px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    gap: 10px;
+  }
+  .company-name {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+  }
+  .img-container img {
+    width: 250px;
+    height: auto;
+    margin-top: 33%;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 70%;
+    background: radial-gradient(circle, #bcf17f, transparent, transparent);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  .hero-content {
+    width: 80%;
+    text-align: center;
+    z-index: 2;
+  }
+
+  #leaf {
+    position: absolute;
+    top: 70%;
+    left: 37%;
+    width: 15%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    z-index: 10;
+    transform: rotate(45deg);
+  }
+  #lemon {
+    position: absolute;
+    top: 15%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    width: 18%;
+  }
+  #orange {
+    position: absolute;
+    top: 90%;
+    left: 2%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+  }
+  #coconoutleaf {
+    display: none;
+  }
+}
