@@ -23,7 +23,7 @@
   <body>
     <!-- النجوم المتحركة -->
     <div class="stars-container" id="starsContainer"></div>
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" data-aos="fade-down">
       <div class="logo-container">
         <div class="logo">
           <i class="fas fa-leaf"></i>
@@ -45,7 +45,7 @@
       </div>
     </nav>
 
-    <section class="hero" id="home">
+    <section class="hero" id="home" data-aos="fade-down">
       <div class="img-container" id="imgContainer">
         <img src="img/اناناس.png" alt="" />
       </div>
@@ -64,6 +64,116 @@
       </div>
     </section>
 
+    <!-- About Section -->
+    <section class="about" id="about" data-aos="fade-down">
+      <h2 class="section-title">من نحن</h2>
+      <div class="about-content">
+        <div class="about-card" data-aos="fade-left">
+          <p class="about-text">
+            شركة <strong>زرع بلــــدنا</strong> هي شركة رائدة في تجارة الخضروات
+            والفواكه الطازجة، تأسست عام 2010 بهدف توفير المنتجات الزراعية
+            الطازجة مباشرة من المزارع إلى منزلك. نحن نعمل مع أفضل المزارعين
+            المحليين لضمان جودة منتجاتنا وطزاجتها. <br /><br />
+            نقدم تشكيلة واسعة من الخضروات والفواكه الموسمية والعضوية، مع ضمان
+            وصولها إليك في أسرع وقت ممكن مع الحفاظ على قيمتها الغذائية. فريقنا
+            من الخبراء يختار بعناية كل منتج لضمان تلبيته لأعلى معايير الجودة.
+            <br /><br />
+            مهمتنا هي تعزيز نمط الحياة الصحي من خلال توفير منتجات طازجة وعالية
+            الجودة لعملائنا الكرام، مع الالتزام بالمسؤولية الاجتماعية والاستدامة
+            البيئية.
+          </p>
+        </div>
+        <div class="pineapple-fixed" id="pineappleFixed" data-aos="fade-right">
+          <!-- سيتم نقل الأناناس هنا باستخدام GSAP -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+      <h2 class="section-title">منتجاتنا</h2>
+
+      <div class="products-filter">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="searchInput" placeholder="ابحث عن منتج..." />
+        </div>
+
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="fruit">فواكه</button>
+          <button class="filter-btn" data-filter="vegetable">خضروات</button>
+        </div>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- سيتم ملء المنتجات ديناميكيًا باستخدام JavaScript -->
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h2 class="section-title">تواصل معنا</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <h3 class="contact-title">معلومات الاتصال</h3>
+            <div class="contact-details">
+              <a
+                href="https://wa.me/966500000000?text=مساء الخير، أريد الاستفسار عن منتجات ZEINATOCO"
+                class="contact-btn"
+                target="_blank"
+              >
+                <i class="fab fa-whatsapp"></i> تواصل عبر الواتساب
+              </a>
+              <a href="tel:+966500000000" class="contact-btn phone">
+                <i class="fas fa-phone-alt"></i> +966 50 000 0000
+              </a>
+              <p class="address">
+                <i class="fas fa-map-marker-alt"></i> المملكة العربية السعودية -
+                الرياض - حي المروج - شارع النخيل
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <h3 class="contact-title">وسائل التواصل الاجتماعي</h3>
+            <div class="social-links">
+              <a href="#" class="social-link" target="_blank"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-link" target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link" target="_blank"
+                ><i class="fab fa-snapchat-ghost"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.980058473488!2d46.67265507595227!3d24.774405653993745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee3b9c8d5b73f%3A0x6a23c7b5c6c6c6c6!2sRiyadh%2C%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1681234567890!5m2!1sen!2sus"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <a
+            href="https://www.google.com/maps/dir//Riyadh+Saudi+Arabia"
+            class="directions-btn"
+            target="_blank"
+          >
+            <i class="fas fa-directions"></i> الحصول على الاتجاهات
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
