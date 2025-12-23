@@ -443,7 +443,7 @@ body {
 }
 
 .product-card {
-  background-color: white;
+  background: rgba(255, 255, 255, 0.6);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -453,13 +453,13 @@ body {
 
 .product-card:hover {
   transform: translateY(-15px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .product-image {
   height: 200px;
   width: 100%;
-  background-color: #f0f0f0;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -668,6 +668,94 @@ body {
   transform: translateY(-5px);
 }
 
+/* Footer */
+.footer {
+  background-color: var(--light-green);
+  color: white;
+  padding: 4rem 5% 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-column h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-column h3:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--orange);
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--orange);
+  padding-right: 10px;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #444;
+  color: white;
+  font-size: 0.9rem;
+}
+.copyright span {
+  font-weight: bold;
+  color: var(--orange);
+  text-transform: capitalize;
+}
+/* زر المساعدة الثابت */
+.help-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background: linear-gradient(135deg, var(--orange), var(--red));
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+  animation: pulse 2s infinite;
+}
+
+.help-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
 @media (max-width: 1024px) {
   .hero-title {
     font-size: 3.5rem;
@@ -676,6 +764,9 @@ body {
   .contact-content {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -776,6 +867,9 @@ body {
   .search-box {
     max-width: 100%;
   }
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 515px) {
@@ -854,5 +948,11 @@ body {
   .about-card,
   .product-card {
     padding: 1.5rem;
+  }
+  .help-btn {
+    left: 20px;
+    bottom: 20px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
   }
 }

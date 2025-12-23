@@ -168,11 +168,13 @@ function loadProducts(filter = "all", searchTerm = "") {
     }</span>
                         <h3 class="product-name">${product.name}</h3>
                         <p class="product-price">${product.price}</p>
-                        <a href="https://wa.me/+201009039628?text=مساء الخير، أريد أن أطلب ${
+                        <a href="https://wa.me/201009039628?text=مساء%20الخير%0A%0Aأريد%20أن%20أطلب:%20
+                        ${
                           product.name
-                        } الكمية المطلوبة: " class="order-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> طلب عبر الواتساب
+                        }%0Aالكمية%20المطلوبة: " class="order-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> طلب عبر الواتساب
                         </a>
+
                     </div>
                 `;
 
