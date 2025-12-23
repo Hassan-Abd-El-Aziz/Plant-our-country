@@ -21,6 +21,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -176,11 +177,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* background: linear-gradient(
-    to bottom right,
-    var(--primary-green),
-    var(--lime-green)
-  ); */
   position: relative;
   overflow: hidden;
   padding: 0 5%;
@@ -244,10 +240,17 @@ body {
 }
 
 .img-container img {
-  width: 350px;
+  width: 300px;
   height: auto;
+  transition: 0.3s ease-in-out;
 }
-
+.img-container img:hover {
+  transform: scale(1.1) rotate(20deg);
+}
+.pineapple-fixed img {
+  width: 700px;
+  display: flex;
+}
 #leaf {
   position: absolute;
   top: 15%;
@@ -756,7 +759,7 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1400px) {
   .hero-title {
     font-size: 3.5rem;
   }
@@ -764,6 +767,9 @@ body {
   .contact-content {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+  .pineapple-fixed img {
+    width: 600px;
   }
   .footer-content {
     grid-template-columns: repeat(2, 1fr);
@@ -818,7 +824,9 @@ body {
   .hero-subtitle {
     font-size: 1.2rem;
   }
-
+  .pineapple-fixed img {
+    width: 500px;
+  }
   #leaf {
     position: absolute;
     top: 30%;
@@ -943,6 +951,9 @@ body {
   }
   #coconoutleaf {
     display: none;
+  }
+  .pineapple-fixed img {
+    width: 350px;
   }
 
   .about-card,
